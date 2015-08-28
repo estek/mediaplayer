@@ -1,9 +1,9 @@
 {
     "lib": {
         "www": {
-            "id": "com.phonegap.helloworld",
-            "version": "3.5.0",
-            "uri": "https://github.com/phonegap/phonegap-app-hello-world/archive/3.5.0.tar.gz"
+            "id": "com.phonegap.kidsmedia.player.estek",
+            "version": "1.0.0",
+            "uri": "https://www.estek.ca"
         }
     }
 }
