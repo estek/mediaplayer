@@ -1,9 +1,0 @@
-{
-    "lib": {
-        "www": {
-            "id": "com.phonegap.kidsmedia.player.estek",
-            "version": "1.0.0",
-            "uri": "https://www.estek.ca"
-        }
-    }
-}
