@@ -25,7 +25,7 @@
         <meta name="format-detection" content="telephone=no" />
         <meta name="msapplication-tap-highlight" content="no" />
         <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=1.5" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
         <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
         <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
         <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
@@ -34,7 +34,41 @@
             #container
             {
                 margin: 6px;
+                
             }
+            #btnPlay
+            {
+                margin-bottom: 100px;
+            }
+            #btnPause
+            {
+                margin-bottom: 100px;
+            }
+            #btnStop
+            {
+                margin-bottom: 100px;
+            }            
+            #volumeDiv
+            {
+                margin-bottom: 100px;
+            } 
+
+           #liHeaderEN {
+               font-size: 45px;  
+               text-align: center;              
+            }
+            #liHeaderFR {
+               font-size: 45px; 
+               text-align: center;                
+            }              
+            .liDivider{
+               margin: 40px;
+            }
+            #footer{
+                margin-top: 80px; 
+            }
+            
+
         </style>
         <script>
             var player;
@@ -121,10 +155,10 @@
                  
             }
         </script>
-        <title>Audio Video</title>
+        <title>Kids Song player</title>
     </head>
     <body>
-        <div id="container">
+        <div id="container" data-role="page">
             <audio id="player"/>
                 <source src="assets/sunshine.mp3" />
                 <source src="assets/sunshine.ogg" />
@@ -132,17 +166,46 @@
             <button id="btnPlay">Play</button>
             <button id="btnPause">Pause</button>
             <button id="btnStop">Stop</button>
+            <div id="volumeDiv">
             <label for="rngVolume">Volume</label>
-            <input type="range" id="rngVolume" min="0" max="1" step=".01" value='.5' data-highlight="true" onchange="changeVolume()"/>
+            <input type="range" id="rngVolume" min="0" max="1" step=".01" value='.5' data-highlight="true" onchange="changeVolume()"/></div>
+
             <ul data-role="listview" data-inset="true">
+                <li data-role="list-divider" id="liHeaderEN">English Songs</li>
+                <li><a href="#" onclick="changeSong('123en')">Learn 123</a></li>
+                <li><a href="#" onclick="changeSong('abcen')">Learn your abc's</a></li>
+                <li><a href="#" onclick="changeSong('bones')">The squeleton dance</a></li>
+                <li><a href="#" onclick="changeSong('bus')">The wheels on the bus</a></li>
+                <li><a href="#" onclick="changeSong('monkey')">The monkeys song</a></li>
+                <li><a href="#" onclick="changeSong('oldmc')">Old McDonald</a></li>
+                <li><a href="#" onclick="changeSong('twinkle')">Twinkle Twinkle little star</a></li>
+            </ul>  </br></br></br></br>
+
+            <ul data-role="listview" data-inset="true">
+                <li data-role="list-divider" id="liHeaderFR">Chansons Françaises</li>
+                <li><a href="#" onclick="changeSong('frere')">Frère Jacques</a></li>
+                <li><a href="#" onclick="changeSong('legumes')">Tous les légumes</a></li>
+                <li><a href="#" onclick="changeSong('lundi')">Lundi matin le roi ...</a></li>
+                <li><a href="#" onclick="changeSong('marionnette')">La chanson des marionnettes</a></li>
+                <li><a href="#" onclick="changeSong('maturin')">Dans la ferme a Maturin</a></li>
+                <li><a href="#" onclick="changeSong('meremichelle')">Mère Michelle</a></li>
+                <li><a href="#" onclick="changeSong('pirouette')">Pirouette Cacaouette</a></li>
+                <li><a href="#" onclick="changeSong('poissons')">Petits poissons</a> </li> 
+                <li><a href="#" onclick="changeSong('pont')">Sur le pont d'avignon</a></li>
+                <li><a href="#" onclick="changeSong('souris')">Une souris verte</a> </li>
+                
+            </ul> </br></br></br></br>
+
+<!--original  <ul data-role="listview" data-inset="true">
                 <li data-role="list-divider">Songs</li>
                 <li><a href="#" onclick="changeSong('sunshine')">Sunshine</a></li>
                 <li><a href="#" onclick="changeSong('iSee')">I See</a></li>
                 <li><a href="#" onclick="changeSong('finalRewind')">The Final Rewind</a></li>
                 <li><a href="#" onclick="changeSong('audioBeast')">Audio Beast</a></li>
                 <li><a href="#" onclick="changeSong('meaning')">Meaning</a></li>
-            </ul>
-            <div data-role="footer"> 
+            </ul>   -->
+
+            <div id="footer" data-role="footer"> 
 	           <output id="timeOut">Elapsed Time:</output> 
             </div> 
         </div><!-- container -->
