@@ -27,13 +27,76 @@
         <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
         <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+        <link rel="stylesheet"  href="css/icon.css" />
         <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
         <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+        <script type="text/javascript" src="cordova.js"></script>
         <style>
             #container
             {
                 margin: 6px;
+                background-color: #eaeaea;
+                
             }
+            #title{
+                text-align: center;
+                font-size: 60px;
+                font-style: bold;
+                margin: 15px;
+            }
+            #btnPlay
+            {
+                text-align: center;
+                margin-bottom: 100px;
+            }
+            #btnPause
+            {
+                text-align: center;
+                margin-bottom: 100px;
+            }
+            #btnStop
+            {
+                text-align: center;
+                margin-bottom: 100px;
+            }            
+            #volumeDiv
+            {
+                margin-bottom: 100px;
+            } 
+
+           #liHeaderEN {
+               font-size: 45px;  
+               text-align: center;              
+            }
+            #liHeaderFR {
+               font-size: 45px; 
+               text-align: center;                
+            }              
+            .liDivider{
+               margin: 40px;
+            }
+            #footer{
+                height: 60px;
+                font-size: 25px;
+                margin-top: 80px; 
+            }
+            li{
+                border: 5px;
+                border-radius: 50%;
+            }
+            ul{
+              list-style-type: none;
+              text-align: center; 
+            }
+            .ui-btn { 
+                height: 200px; 
+                font-size: 48px;
+            }
+            .ui-icon-play-circle-o {
+                height: 350px;
+                width: 350px;
+                }
+
         </style>
         <script>
             var player;
@@ -120,39 +183,66 @@
                  
             }
         </script>
-        <title>Hello World</title>
+        <title>Kids Song player</title>
     </head>
     <body>
-
-
-        <div id="container">
+        <div id="container" data-role="page">
             <audio id="player"/>
-                <source src="assets/sunshine.mp3" />
-                <source src="assets/sunshine.ogg" />
-            </audio>
-            <button id="btnPlay">Play</button>
-            <button id="btnPause">Pause</button>
-            <button id="btnStop">Stop</button>
+                <source src="assets/bones.mp3" />
+                <!-- <source src="assets/sunshine.ogg" />
+ -->            </audio>
+            <div id="title">Kids Song player</div>
+            <div id="btnPlay"><img src="assets/img/play.png" height=300px width=300px></div>
+
+            <div id="btnPause"><img src="assets/img/pause.png" height=300px width=300px></div>
+
+            <div id="btnStop"><img src="assets/img/stop.png" height=300px width=300px></div>
+            <!-- <button id="btnPause">Pause</button></div>
+            <button id="btnStop">Stop</button> -->
+            <!-- <div id="volumeDiv">
             <label for="rngVolume">Volume</label>
-            <input type="range" id="rngVolume" min="0" max="1" step=".01" value='.5' data-highlight="true" onchange="changeVolume()"/>
-            <ul data-role="listview" data-inset="true">
+            <input type="range" id="rngVolume" min="0" max="1" step=".01" value='.5' data-highlight="true" onchange="changeVolume()"/></div>
+ -->
+            <ul>
+                <li id="liHeaderEN">English Songs</br></br></li>
+                <li><a href="#" onclick="changeSong('123en')"><img src="assets/img/123.jpg" height=300px width=300px></br>Learn 123</br></br></a></li>
+                <li><a href="#" onclick="changeSong('abcen')"><img src="assets/img/abc.jpg" height=300px width=300px></br>Learn your abc's</br></br></a></li>
+                <li><a href="#" onclick="changeSong('bones')"><img src="assets/img/bones.jpg" height=300px width=300px></br>The squeleton dance</br></br></a></li>
+                <li><a href="#" onclick="changeSong('bus')"><img src="assets/img/bus.jpg" height=300px width=300px></br>The wheels on the bus</br></br></a></li>
+                <li><a href="#" onclick="changeSong('monkey')"><img src="assets/img/monkey.jpg" height=300px width=300px></br>The monkeys song</br></br></a></li>
+                <li><a href="#" onclick="changeSong('oldmc')"><img src="assets/img/oldmc.jpg" height=300px width=300px></br>Old McDonald</br></br></a></li>
+                <li><a href="#" onclick="changeSong('twinkle')"><img src="assets/img/twinkle.jpg" height=300px width=300px></br>Twinkle Twinkle little star</br></br></a></li>
+            </ul>  </br></br></br></br>
+
+            <ul>
+                <li id="liHeaderFR">Chansons Françaises</br></br></li>
+                <li><a href="#" onclick="changeSong('frere')"><img src="assets/img/frere.jpg" height=300px width=300px></br>Frère Jacques</br></br></a></li>
+                <li><a href="#" onclick="changeSong('legumes')"><img src="assets/img/legumes.jpg" height=300px width=300px></br>Tous les légumes</br></br></a></li>
+                <li><a href="#" onclick="changeSong('lundi')"><img src="assets/img/lundi.jpg" height=300px width=300px></br>Lundi matin le roi ...</br></br></a></li>
+                <li><a href="#" onclick="changeSong('marionnette')"><img src="assets/img/marionnette.jpg" height=300px width=300px></br>La chanson des marionnettes</br></br></a></li>
+                <li><a href="#" onclick="changeSong('maturin')"><img src="assets/img/maturin.jpg" height=300px width=300px></br>Dans la ferme a Maturin</br></br></a></li>
+                <li><a href="#" onclick="changeSong('meremichelle')"><img src="assets/img/meremichelle.jpg" height=300px width=300px></br>Mère Michelle</br></br></a></li>
+                <li><a href="#" onclick="changeSong('pirouette')"><img src="assets/img/pirouette.jpg" height=300px width=300px></br>Pirouette Cacaouette</br></br></a></li>
+                <li><a href="#" onclick="changeSong('poissons')"><img src="assets/img/poissons.jpg" height=300px width=300px></br>Petits poissons</br></br></a> </li> 
+                <li><a href="#" onclick="changeSong('pont')"><img src="assets/img/pont.jpg" height=300px width=300px></br>Sur le pont d'avignon</br></br></a></li>
+                <li><a href="#" onclick="changeSong('souris')"><img src="assets/img/souris.jpg" height=300px width=300px></br>Une souris verte</br></br></a> </li>
+                
+            </ul> </br></br></br></br>
+
+<!--original  <ul data-role="listview" data-inset="true">
                 <li data-role="list-divider">Songs</li>
                 <li><a href="#" onclick="changeSong('sunshine')">Sunshine</a></li>
                 <li><a href="#" onclick="changeSong('iSee')">I See</a></li>
                 <li><a href="#" onclick="changeSong('finalRewind')">The Final Rewind</a></li>
                 <li><a href="#" onclick="changeSong('audioBeast')">Audio Beast</a></li>
                 <li><a href="#" onclick="changeSong('meaning')">Meaning</a></li>
-            </ul>
-            <div data-role="footer"> 
-               <output id="timeOut">Elapsed Time:</output> 
+            </ul>   -->
+
+            <div id="footer" data-role="footer"> 
+	           <output id="timeOut">Elapsed Time:</output> </br></br></br>
+               <h4>Copyright © Eric Savoy 2015 </br> App originally made for Emma Savoy </h4>
             </div> 
         </div><!-- container -->
-
-
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-        <script type="text/javascript">
-            app.initialize();
-        </script>
+    
     </body>
 </html>
