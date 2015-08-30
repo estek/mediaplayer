@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.phonegap.helloworld" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+<widget id="com.phonegap.estek.youtube.kids" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
     <name>Kids Song / Chansons pour enfants</name>
     <description>
         This app was made for my daugther to prevent surfing from one youtube video to the other and getting all the ads. Application crée pour ma fille afin d'éviter les publiciter et la navigation d'un video youtube a l'autre
