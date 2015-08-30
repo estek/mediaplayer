@@ -35,28 +35,19 @@
             #container
             {
                 margin: 6px;
-                background-color: #eaeaea;
+                background-color: #ffdbfe;
                 
-            }
-            #title{
-                text-align: center;
-                font-size: 60px;
-                font-style: bold;
-                margin: 15px;
             }
             #btnPlay
             {
-                text-align: center;
                 margin-bottom: 100px;
             }
             #btnPause
             {
-                text-align: center;
                 margin-bottom: 100px;
             }
             #btnStop
             {
-                text-align: center;
                 margin-bottom: 100px;
             }            
             #volumeDiv
@@ -76,8 +67,6 @@
                margin: 40px;
             }
             #footer{
-                height: 60px;
-                font-size: 25px;
                 margin-top: 80px; 
             }
             li{
@@ -191,20 +180,15 @@
                 <source src="assets/bones.mp3" />
                 <!-- <source src="assets/sunshine.ogg" />
  -->            </audio>
-            <div id="title">Kids Song player</div>
-            <div id="btnPlay"><img src="assets/img/play.png" height=300px width=300px></div>
-
-            <div id="btnPause"><img src="assets/img/pause.png" height=300px width=300px></div>
-
-            <div id="btnStop"><img src="assets/img/stop.png" height=300px width=300px></div>
-            <!-- <button id="btnPause">Pause</button></div>
-            <button id="btnStop">Stop</button> -->
-            <!-- <div id="volumeDiv">
+            <button id="btnPlay" <img src="assets/img/play.png" height=300px width=300px>></button>
+            <button id="btnPause">Pause</button>
+            <button id="btnStop">Stop</button>
+            <div id="volumeDiv">
             <label for="rngVolume">Volume</label>
             <input type="range" id="rngVolume" min="0" max="1" step=".01" value='.5' data-highlight="true" onchange="changeVolume()"/></div>
- -->
+
             <ul>
-                <li id="liHeaderEN">English Songs</br></br></li>
+                <li id="liHeaderEN">English Songs</li>
                 <li><a href="#" onclick="changeSong('123en')"><img src="assets/img/123.jpg" height=300px width=300px></br>Learn 123</br></br></a></li>
                 <li><a href="#" onclick="changeSong('abcen')"><img src="assets/img/abc.jpg" height=300px width=300px></br>Learn your abc's</br></br></a></li>
                 <li><a href="#" onclick="changeSong('bones')"><img src="assets/img/bones.jpg" height=300px width=300px></br>The squeleton dance</br></br></a></li>
@@ -215,7 +199,7 @@
             </ul>  </br></br></br></br>
 
             <ul>
-                <li id="liHeaderFR">Chansons Françaises</br></br></li>
+                <li id="liHeaderFR">Chansons Françaises</li>
                 <li><a href="#" onclick="changeSong('frere')"><img src="assets/img/frere.jpg" height=300px width=300px></br>Frère Jacques</br></br></a></li>
                 <li><a href="#" onclick="changeSong('legumes')"><img src="assets/img/legumes.jpg" height=300px width=300px></br>Tous les légumes</br></br></a></li>
                 <li><a href="#" onclick="changeSong('lundi')"><img src="assets/img/lundi.jpg" height=300px width=300px></br>Lundi matin le roi ...</br></br></a></li>
@@ -239,8 +223,7 @@
             </ul>   -->
 
             <div id="footer" data-role="footer"> 
-	           <output id="timeOut">Elapsed Time:</output> </br></br></br>
-               <h4>Copyright © Eric Savoy 2015 </br> App originally made for Emma Savoy </h4>
+	           <output id="timeOut">Elapsed Time:</output> 
             </div> 
         </div><!-- container -->
     
