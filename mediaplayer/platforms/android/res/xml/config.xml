@@ -6,12 +6,12 @@
         <param name="onload" value="true" />
     </feature>
     <allow-intent href="market:*" />
-    <name>Hello World</name>
+    <name>Kids Song / Chansons pour enfants</name>
     <description>
-        Hello World sample application that responds to the deviceready event.
+        This app was made for my daugther to prevent surfing from one youtube video to the other and getting all the ads. Application crée pour ma fille afin d'éviter les publiciter et la navigation d'un video youtube a l'autre
     </description>
-    <author email="support@phonegap.com" href="http://phonegap.com">
-        PhoneGap Team
+    <author email="info@estek.ca" href="http://www.estek.ca">
+        Estek.ca / Eric Savoy
     </author>
     <content src="index.html" />
     <preference name="permissions" value="none" />

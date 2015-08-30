@@ -25,7 +25,7 @@
         <meta name="format-detection" content="telephone=no" />
         <meta name="msapplication-tap-highlight" content="no" />
         <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=medium-dpi" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
         <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
         <link rel="stylesheet"  href="css/icon.css" />
         <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
@@ -34,8 +34,12 @@
         <style>
             #container
             {
-                margin: 6px;
+                margin: 0px;
+                border: none;
+                padding: none;
+
                 background-color: #eaeaea;
+                text-align: center;
                 
             }
             #title{
@@ -66,7 +70,7 @@
 
            #liHeaderEN {
                font-size: 45px;  
-               text-align: center;              
+               /*text-align: center;*/              
             }
             #liHeaderFR {
                font-size: 45px; 
@@ -80,11 +84,9 @@
                 font-size: 25px;
                 margin-top: 80px; 
             }
-            li{
-                border: 5px;
-                border-radius: 50%;
-            }
+
             ul{
+               padding: 0; 
               list-style-type: none;
               text-align: center; 
             }
@@ -239,9 +241,9 @@
             </ul>   -->
 
             <div id="footer" data-role="footer"> 
-	           <output id="timeOut">Elapsed Time:</output> </br></br></br>
+	           <output id="timeOut">Elapsed Time:</output> </br></br></br></div>
                <h4>Copyright © Eric Savoy 2015 </br> App originally made for Emma Savoy </h4>
-            </div> 
+             
         </div><!-- container -->
     
     </body>
